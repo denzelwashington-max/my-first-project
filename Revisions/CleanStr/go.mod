@@ -1,0 +1,3 @@
+module CleanStr
+
+go 1.27.4
