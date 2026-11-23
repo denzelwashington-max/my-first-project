@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func CamelToSnakeCase(s string) string {
 	if len(s) == 0 {
 		return s
@@ -38,6 +36,7 @@ func CamelToSnakeCase(s string) string {
 	return string(result)
 }
 
+/*
 func main() {
 	fmt.Println(CamelToSnakeCase("HelloWorld"))
 	fmt.Println(CamelToSnakeCase("helloWorld"))
@@ -46,3 +45,4 @@ func main() {
 	fmt.Println(CamelToSnakeCase("camelToSnakeCase"))
 	fmt.Println(CamelToSnakeCase("hey2"))
 }
+*/
