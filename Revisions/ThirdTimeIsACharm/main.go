@@ -2,24 +2,22 @@ package main
 
 import "fmt"
 
-func ThirdTimeIsACharm(s string) string {
-	if len(s) < 3 {
-		return "\n"
+func ThirdTimeIsACharm(str string) string {
+	if len(str) == 0 {
+		return ""
 	}
+	var res []byte
+	for i := 2; i < len(str); i += 3 {
+		res = append(res, str[i])
 
-	var result []byte
-	for i := 2; i < len(s); i += 3 {
-		result = append(result, s[i])
 	}
-	result = append(result, '\n')
-
-	return string(result)
+	res = append(res, '\n')
+	return string(res)
 }
+
 func main() {
-	fmt.Println(ThirdTimeIsACharm("123456789"))
-	fmt.Println(ThirdTimeIsACharm(""))
-	fmt.Println(ThirdTimeIsACharm("a b c d e f"))
-	fmt.Println(ThirdTimeIsACharm("12"))
-	fmt.Println(ThirdTimeIsACharm("denzel"))
-	fmt.Println(ThirdTimeIsACharm("w a s h i n g t o n"))
+	fmt.Print(ThirdTimeIsACharm("123456789"))
+	fmt.Print(ThirdTimeIsACharm(""))
+	fmt.Print(ThirdTimeIsACharm("a b c d e f"))
+	fmt.Print(ThirdTimeIsACharm("12"))
 }

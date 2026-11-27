@@ -10,37 +10,25 @@ func main() {
 		return
 	}
 
-	var words []string
-	str := os.Args[1]
-	start := 0
+	s := os.Args[1]
 	inWord := false
+	printedWord := false
 
-	for i := 0; i < len(str); i++ {
-		ch := str[i]
-		if ch == ' ' || ch == '\f' {
-			if inWord {
-				words = append(words, str[start:i])
-				inWord = false
-			}
-		} else {
-			if !inWord {
-				start = i
-				inWord = true
-			}
+	for i := 0; i < len(s); i++ {
+		ch := s[i]
+		if ch == ' ' || ch == '\t' {
+			inWord = false
+			continue
 		}
-	}
-	if inWord {
-		words = append(words, str[start:])
-		inWord = false
-	}
-	if len(words) == 0 {
-		return
-	}
-	for i, word := range words {
-		if i > 0 {
-			fmt.Print("   ")
+		if !inWord {
+			if printedWord {
+				fmt.Print("   ")
+			}
+			inWord = true
+			printedWord = true
 		}
-		fmt.Print(word)
+		fmt.Printf("%c", ch)
+		printedWord = true
 	}
 	fmt.Println()
 }

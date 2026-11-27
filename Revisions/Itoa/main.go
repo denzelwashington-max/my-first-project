@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func Itoa(n int) string {
 	if n == 0 {
 		return "0"
@@ -22,10 +20,11 @@ func Itoa(n int) string {
 		result[i], result[j] = result[j], result[i]
 	}
 	if isNegative {
-		result = append( []byte{'-'},result...)
+		result = append([]byte{'-'}, result...)
 	}
 	return string(result)
 }
+
 /*
 func main() {
 	fmt.Println(Itoa(1235))
@@ -33,4 +32,5 @@ func main() {
 	fmt.Println(Itoa(786))
 	fmt.Println(Itoa(0))
 	fmt.Println(Itoa(-9564))
-}*/
+}
+*/

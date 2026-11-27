@@ -7,34 +7,32 @@ func WeAreUnique(str1, str2 string) int {
 		return -1
 	}
 
-	set1 := make(map[rune]bool)
+	step1 := make(map[rune]bool)
 	for _, r := range str1 {
-		set1[r] = true
+		step1[r] = true
 	}
 
-	set2 := make(map[rune]bool)
+	step2 := make(map[rune]bool)
 	for _, r := range str2 {
-		set2[r] = true
+		step2[r] = true
 	}
 
 	count := 0
 
-	for r := range set1 {
-		if !set2[r] {
+	for r := range step1 {
+		if !step2[r] {
 			count++
 		}
 	}
-
-	for r := range set2 {
-		if !set1[r] {
+	for r := range step2 {
+		if !step1[r] {
 			count++
 		}
 	}
 	return count
 }
 func main() {
-	fmt.Println(WeAreUnique("too", "boo"))
+	fmt.Println(WeAreUnique("foo", "boo"))
 	fmt.Println(WeAreUnique("", ""))
 	fmt.Println(WeAreUnique("abc", "def"))
-	fmt.Println(WeAreUnique("denzel", "washington"))
 }

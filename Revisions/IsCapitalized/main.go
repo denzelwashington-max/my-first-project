@@ -17,7 +17,8 @@ func IsCapitalized(s string) bool {
 	}
 	return true
 }
-func main(){
+
+func main() {
 	fmt.Println(IsCapitalized("Hello! How are you?"))
 	fmt.Println(IsCapitalized("Hello! How Are You"))
 	fmt.Println(IsCapitalized("Denzel Washington"))

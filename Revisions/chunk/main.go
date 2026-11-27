@@ -24,6 +24,7 @@ func Chunk(slice []int, size int) {
 	fmt.Println(chunks)
 }
 
+/*
 func main() {
 	Chunk([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, 0)
 	Chunk([]int{0, 1, 2, 3, 4, 5, 6}, 7)
@@ -33,3 +34,4 @@ func main() {
 	Chunk([]int{}, 7)
 	Chunk([]int{0, 1, 2, 3, 4, 5, 6, 7, 8}, 8)
 }
+*/

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func IntToByte(n int) []byte {
 	if n == 0 {
 		return []byte{'0'}
@@ -41,6 +39,7 @@ func ZipString(s string) string {
 	return string(result)
 }
 
+/*
 func main() {
 	fmt.Println(ZipString("YouuungFellllas"))
 	fmt.Println(ZipString("Thee quuick browwn fox juumps over the laaazy dog"))
@@ -48,3 +47,4 @@ func main() {
 	fmt.Println(ZipString("Helloo There wwaassssshiiiinnnnggggtttoooonnnn"))
 	fmt.Println(ZipString("hiiiii thheeerrreee smmmaaarrrttt dddeeeennnnzzzeeelll"))
 }
+*/

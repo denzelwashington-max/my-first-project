@@ -7,29 +7,27 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Print(" ")
-		return
+		fmt.Println()
 	}
 
-	var result []byte
 	s := os.Args[1]
 	wordStarted := false
 	spacePending := false
-
+	var res []byte
 	for i := 0; i < len(s); i++ {
-		ch := s[i]
-		if ch == ' ' || ch == '\f' {
+		if s[i] == ' ' || s[i] == '\t' {
 			if wordStarted {
 				spacePending = true
 			}
 		} else {
 			if spacePending {
-				result = append(result, ' ')
+				res = append(res, ' ')
 				spacePending = false
+
 			}
-			result = append(result, ch)
+			res = append(res, s[i])
 			wordStarted = true
 		}
 	}
-	fmt.Println(string(result))
+	fmt.Println(string(res))
 }

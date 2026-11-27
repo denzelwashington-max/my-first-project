@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func HashCode(dec string) string {
 	size := len(dec)
 	var result []byte
@@ -16,6 +14,7 @@ func HashCode(dec string) string {
 	return string(result)
 }
 
+/*
 func main() {
 	fmt.Println(HashCode("A"))
 	fmt.Println(HashCode("DG"))
@@ -23,3 +22,4 @@ func main() {
 	fmt.Println(HashCode("Done"))
 	fmt.Println(HashCode("Denzel"))
 }
+*/

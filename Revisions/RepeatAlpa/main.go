@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func RepeatAlpha(s string) string {
 	var res []byte
 	repeat := 1
@@ -21,9 +19,9 @@ func RepeatAlpha(s string) string {
 	return string(res)
 }
 
-func main() {
+/*func main() {
 	fmt.Println(RepeatAlpha("abc"))
 	fmt.Println(RepeatAlpha("Choumi."))
 	fmt.Println(RepeatAlpha(""))
 	fmt.Println(RepeatAlpha("abacadaba 01!"))
-}
+}*/

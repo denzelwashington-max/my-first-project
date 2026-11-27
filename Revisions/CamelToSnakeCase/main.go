@@ -1,42 +1,46 @@
 package main
 
+import "fmt"
+
 func CamelToSnakeCase(s string) string {
 	if len(s) == 0 {
 		return s
 	}
+
 	ls := s[len(s)-1]
 	if ls >= 'A' && ls <= 'Z' {
 		return s
 	}
+
 	for i := 0; i < len(s); i++ {
 		ch := s[i]
 
-		if !((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-			return s
-		}
-		if i+1 < len(s) {
+		if i < len(s)-1 {
 			nx := s[i+1]
 			if ch >= 'A' && ch <= 'Z' && nx >= 'A' && nx <= 'Z' {
 				return s
 			}
 		}
+		if !((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+			return s
+		}
 	}
-	var result []byte
+	var res []byte
 	for i := 0; i < len(s); i++ {
 		ch := s[i]
 		if ch >= 'A' && ch <= 'Z' {
 			if i > 0 {
-				result = append(result, '_')
+				res = append(res, '_')
 			}
-			result = append(result, (ch + 32))
+			res = append(res, ch+32)
 		} else {
-			result = append(result, ch)
+			res = append(res, ch)
 		}
+
 	}
-	return string(result)
+	return string(res)
 }
 
-/*
 func main() {
 	fmt.Println(CamelToSnakeCase("HelloWorld"))
 	fmt.Println(CamelToSnakeCase("helloWorld"))
@@ -45,4 +49,3 @@ func main() {
 	fmt.Println(CamelToSnakeCase("camelToSnakeCase"))
 	fmt.Println(CamelToSnakeCase("hey2"))
 }
-*/
